@@ -13,18 +13,18 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 
-		FenetrePrincipale fenetrePrincipale = new FenetrePrincipale();
+		FenetreLogin fenetreLogin = new FenetreLogin();
 		
-		FenetreReglages fenetreReglages = new FenetreReglages();
+		FenetreMain fenetreMain = new FenetreMain();
 
-		fenetreReglages.setVersPrincipale(event -> {
-			primaryStage.setScene(fenetrePrincipale.getScene());
+		fenetreMain.setVersLogin(event -> {
+			primaryStage.setScene(fenetreLogin.getScene());
 		});
-		fenetrePrincipale.setVersReglages(event ->
-			primaryStage.setScene(fenetreReglages.getScene())
+		fenetreLogin.setVersMain(event ->
+			primaryStage.setScene(fenetreMain.getScene())
 		);
 
-		primaryStage.setScene(fenetrePrincipale.getScene());
+		primaryStage.setScene(fenetreLogin.getScene());
 		primaryStage.show();
 
 	}
